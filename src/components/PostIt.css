@@ -1,0 +1,8 @@
+.post-it {
+  font-family: 'Just Another Hand', cursive;
+  width: 400px;
+  height: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid black;
+}

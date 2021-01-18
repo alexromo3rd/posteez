@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "First sticky",
+    "description": "This is just a test sticky to make sure my endpoints work!",
+    "category": "work"
+  },
+  {
+    "id": 2,
+    "title": "Second sticky",
+    "description": "This is just a test sticky to make sure my endpoints work!",
+    "category": "work"
+  },
+  {
+    "id": 3,
+    "title": "Third sticky",
+    "description": "This is just a test sticky to make sure my endpoints work!",
+    "category": "work"
+  },
+  {
+    "id": 4,
+    "title": "Fourth sticky",
+    "description": "This is just a test sticky to make sure my endpoints work!",
+    "category": "work"
+  },
+  {
+    "id": 5,
+    "title": "Fifth sticky",
+    "description": "This is just a test sticky to make sure my endpoints work!",
+    "category": "work"
+  },
+  {
+    "id": 6,
+    "title": "Sixth sticky",
+    "description": "This is just a test sticky to make sure my endpoints work!",
+    "category": "work"
+  }
+]

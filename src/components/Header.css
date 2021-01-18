@@ -1,0 +1,15 @@
+header {
+  height: 50px;
+  background-color: #f8f8f8;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  height: 40px;
+  width: 40px;
+}
