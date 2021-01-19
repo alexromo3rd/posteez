@@ -1,9 +1,8 @@
-.container {
+.post-it-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: space-around;
-  height: 90vh;
   background-color: #98b3b1;
 }

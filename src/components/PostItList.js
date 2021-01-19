@@ -11,7 +11,7 @@ const PostItList = (props) => {
 
   return (
     <main>
-      <div className="container">
+      <div className="post-it-list">
         {postIts}
       </div>
     </main>

@@ -20,16 +20,23 @@ class App extends Component {
 
   getPostIts = () => {
     axios.get('/api/post-its').then(res => {
-      this.setState({ data: res.data })
+      this.setState({ data: res.data });
     });
   }
 
+  filterPostIts = (input) => {
+    console.log('Clicked!')
+    const filteredPostIts = this.state.data.map(element => { element.title.includes(input) });
+  };
+
   render() {
     return (
-      <div id="app">
-        <Header />
-        <PostItList data={this.state.data} />
-        <Footer />
+      <div className="app">
+        <div className="container">
+          <Header filteredPostItsFn={this.filterPostIts} />
+          <PostItList data={this.state.data} />
+          <Footer />
+        </div>
       </div>
     );
   };
