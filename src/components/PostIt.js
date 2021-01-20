@@ -5,9 +5,9 @@ const PostIt = (props) => {
   const { title, description, category } = props;
   return (
     <div className='post-it'>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <p>{category}</p>
+      <h3 className='title'>{title}</h3>
+      <p className='description'>{description}</p>
+      <p className='category'><strong>Category:</strong> {category}</p>
     </div>
   );
 };

@@ -1,15 +1,3 @@
-// import React from 'react';
-
-// const SearchBar = (props) => {
-//   return (
-//     <div>
-//       <button onClick={props.filteredPostItsFn}>Click me</button>
-//     </div>
-//   );
-// };
-
-// export default SearchBar;
-
 import React, { Component } from 'react'
 
 class SearchBar extends Component {
@@ -17,19 +5,25 @@ class SearchBar extends Component {
     super();
 
     this.state = {
-      input: ''
+      value: ''
     }
   }
 
   handleChange = e => {
+    this.setState({ value: e.target.value })
+  }
 
+  filter = () => {
+    const { value } = this.state;
+    this.props.filteredPostItsFn(value);
   }
 
   render() {
     return (
-      <div>
-        <button onClick={this.props.filteredPostItsFn}>Click me</button>
-      </div>
+      <>
+        <input type="text" value={this.state.value} onChange={(e) => this.handleChange(e)} />
+        <button onClick={this.filter}>Search</button>
+      </>
     );
   };
 }

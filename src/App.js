@@ -24,19 +24,25 @@ class App extends Component {
     });
   }
 
+  addPostIt = (input) => {
+    console.log('clicked!');
+  }
+
   filterPostIts = (input) => {
-    console.log('Clicked!')
-    const filteredPostIts = this.state.data.map(element => { element.title.includes(input) });
+    const filteredPostIts = this.state.data.filter(element => element.title.includes(input));
+    this.setState({ data: filteredPostIts });
   };
+
+  clear = () => {
+    this.getPostIts();
+  }
 
   render() {
     return (
       <div className="app">
-        <div className="container">
-          <Header filteredPostItsFn={this.filterPostIts} />
-          <PostItList data={this.state.data} />
-          <Footer />
-        </div>
+        <Header addPostItFn={this.addPostIt} filterPostItsFn={this.filterPostIts} clearFn={this.clear} />
+        <PostItList data={this.state.data} />
+        <Footer />
       </div>
     );
   };

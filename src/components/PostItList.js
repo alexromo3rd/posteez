@@ -10,7 +10,7 @@ const PostItList = (props) => {
   });
 
   return (
-    <main>
+    <main className='main'>
       <div className="post-it-list">
         {postIts}
       </div>
@@ -19,4 +19,3 @@ const PostItList = (props) => {
 };
 
 export default PostItList;
-

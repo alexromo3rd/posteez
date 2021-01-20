@@ -1,7 +1,22 @@
 .post-it {
+  position: relative;
   font-family: 'Just Another Hand', cursive;
-  width: 400px;
+  width: 300px;
   height: 200px;
-  margin: 15px 20px;
+  margin: 15px 15px;
+  padding: 2px 4px;
   border: 2px solid black;
+}
+
+.title {
+  border-bottom: 2px solid black;
+}
+
+.description {
+  padding-top: 2px;
+}
+
+.category {
+  position: absolute;
+  bottom: 0;
 }
