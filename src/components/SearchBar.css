@@ -1,0 +1,18 @@
+input[type='text'] {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 250px;
+  height: 25px;
+  padding-left: 10px;
+}
+
+input[type='text']:focus {
+  outline: none;
+  border: 1px solid #98b3b1;
+}
+
+.search {
+  margin: 0px 5px;
+}

@@ -1,2 +1,9 @@
 .new-post-it {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  margin: 0px 10px;
 }

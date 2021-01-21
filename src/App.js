@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
+import NewPostIt from './components/NewPostIt';
 import PostItList from './components/PostItList';
-import Footer from './components/Footer';
 import axios from 'axios';
 import './App.css';
 
@@ -25,11 +25,13 @@ class App extends Component {
   }
 
   addPostIt = (input) => {
-    console.log('clicked!');
+    axios.put('/api/post-its', input).then(res => {
+      this.setState({ data: res.data });
+    });
   }
 
   filterPostIts = (input) => {
-    const filteredPostIts = this.state.data.filter(element => element.title.includes(input));
+    const filteredPostIts = this.state.data.filter(element => element.title.toLowerCase().includes(input));
     this.setState({ data: filteredPostIts });
   };
 
@@ -41,8 +43,8 @@ class App extends Component {
     return (
       <div className="app">
         <Header addPostItFn={this.addPostIt} filterPostItsFn={this.filterPostIts} clearFn={this.clear} />
+        <NewPostIt addPostItFn={this.addPostIt} />
         <PostItList data={this.state.data} />
-        <Footer />
       </div>
     );
   };

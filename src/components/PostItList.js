@@ -10,11 +10,9 @@ const PostItList = (props) => {
   });
 
   return (
-    <main className='main'>
-      <div className="post-it-list">
-        {postIts}
-      </div>
-    </main>
+    <div className="post-it-list">
+      {postIts}
+    </div>
   );
 };
 
