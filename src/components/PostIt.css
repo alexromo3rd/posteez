@@ -8,6 +8,11 @@
   border: 2px solid black;
 }
 
+.title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .title {
   border-bottom: 2px solid black;
 }

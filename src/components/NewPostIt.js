@@ -28,7 +28,7 @@ class NewPostIt extends Component {
         <input className="input" name="title" type="text" placeholder="title" value={title} onChange={e => this.handleChange(e)} />
         <input className="input" name="description" type="text" placeholder="description" value={description} onChange={e => this.handleChange(e)} />
         <input className="input" name="category" type="text" placeholder="category" value={category} onChange={e => this.handleChange(e)} />
-        <Button handleClick={this.onSubmit} label="Add Post-it" />
+        <Button handleClick={this.onSubmit} label="Create" />
       </div>
     );
   };

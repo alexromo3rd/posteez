@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import NewPostIt from './components/NewPostIt';
 import PostItList from './components/PostItList';
+import Modal from './components/Modal';
 import axios from 'axios';
 import './App.css';
 
@@ -10,7 +11,8 @@ class App extends Component {
     super();
 
     this.state = {
-      data: []
+      data: [],
+      show: false
     }
   }
 
@@ -30,6 +32,18 @@ class App extends Component {
     });
   }
 
+  updatePostIt = (id, body) => {
+    // axios.post(`/api/post-its/${id}`, body).then(res => {
+    //   this.setState({ data: res.data });
+    // });
+  }
+
+  deletePostIt = (id) => {
+    axios.delete(`/api/post-its/${id}`).then(res => {
+      this.setState({ data: res.data });
+    });
+  }
+
   filterPostIts = (input) => {
     const filteredPostIts = this.state.data.filter(element => element.title.toLowerCase().includes(input));
     this.setState({ data: filteredPostIts });
@@ -39,12 +53,19 @@ class App extends Component {
     this.getPostIts();
   }
 
+  showModal = () => {
+    this.setState({ show: true });
+  }
+
   render() {
     return (
       <div className="app">
         <Header addPostItFn={this.addPostIt} filterPostItsFn={this.filterPostIts} clearFn={this.clear} />
         <NewPostIt addPostItFn={this.addPostIt} />
-        <PostItList data={this.state.data} />
+        <PostItList data={this.state.data} deletePostItFn={this.deletePostIt} />
+        {this.state.show &&
+          <Modal showModalFn={this.showModal} />
+        }        
       </div>
     );
   };
