@@ -26,6 +26,15 @@ class App extends Component {
     });
   }
 
+  // filterPostIts = (input) => {
+  //   const filteredPostIts = this.state.data.filter(element => element.title.toLowerCase().includes(input));
+  //   this.setState({ data: filteredPostIts });
+  // };
+
+  filterPostIts = (input) => {
+    axios.get(`/api/post-its?title=${input}`)
+  };
+
   addPostIt = (input) => {
     axios.put('/api/post-its', input).then(res => {
       this.setState({ data: res.data });
@@ -44,10 +53,6 @@ class App extends Component {
     });
   }
 
-  filterPostIts = (input) => {
-    const filteredPostIts = this.state.data.filter(element => element.title.toLowerCase().includes(input));
-    this.setState({ data: filteredPostIts });
-  };
 
   clear = () => {
     this.getPostIts();
@@ -62,7 +67,11 @@ class App extends Component {
       <div className="app">
         <Header addPostItFn={this.addPostIt} filterPostItsFn={this.filterPostIts} clearFn={this.clear} />
         <NewPostIt addPostItFn={this.addPostIt} />
-        <PostItList data={this.state.data} deletePostItFn={this.deletePostIt} />
+        {this.state.data.length > 0 ?
+          <PostItList data={this.state.data} deletePostItFn={this.deletePostIt} />
+           :
+          <h2 className=''>Hmm...looks empty. Try creating a new Post-it above!</h2>
+        }
         {this.state.show &&
           <Modal showModalFn={this.showModal} />
         }        
