@@ -12,7 +12,7 @@ const Header = (props) => {
         <Title />
       </div>
       <div className='add-and-filter'>
-        <SearchBar filteredPostItsFn={filterPostItsFn} clearFn={clearFn} />
+        <SearchBar filterPostItsFn={filterPostItsFn} clearFn={clearFn} />
       </div>
     </header>
   );

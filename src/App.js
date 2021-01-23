@@ -31,7 +31,8 @@ class App extends Component {
   }
 
   filterPostIts = (input) => {
-    axios.get(`/api/post-its?title=${input}`)
+    const filteredPostIts = this.state.data.filter(element => element.title.toLowerCase().includes(input));
+    this.setState({ data: filteredPostIts });
   };
 
   addPostIt = (input) => {

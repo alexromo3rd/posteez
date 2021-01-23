@@ -17,7 +17,7 @@ class SearchBar extends Component {
 
   filter = () => {
     const { value } = this.state;
-    this.props.filteredPostItsFn(value.toLowerCase());
+    this.props.filterPostItsFn(value.toLowerCase());
     this.setState({ value: '' });
   };
 
