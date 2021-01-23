@@ -1,0 +1,45 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-main {
+  position: fixed;
+  background: white;
+  border-radius: 10px;
+  width: 40%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-title {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.modal-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-inputs textarea {
+  width: 60%;
+  margin: 20px 0px;
+}
+
+.desc-textarea {
+  height: 100px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 50px;
+}

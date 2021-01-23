@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import NewPostIt from './components/NewPostIt';
 import PostItList from './components/PostItList';
-import Modal from './components/Modal';
+import EditPostItModal from './components/EditPostItModal';
 import axios from 'axios';
 import './App.css';
 
@@ -12,6 +12,10 @@ class App extends Component {
 
     this.state = {
       data: [],
+      editId: '',
+      editTitle: '',
+      editDescription: '',
+      editCategory: '',
       show: false
     }
   }
@@ -26,11 +30,6 @@ class App extends Component {
     });
   }
 
-  // filterPostIts = (input) => {
-  //   const filteredPostIts = this.state.data.filter(element => element.title.toLowerCase().includes(input));
-  //   this.setState({ data: filteredPostIts });
-  // };
-
   filterPostIts = (input) => {
     axios.get(`/api/post-its?title=${input}`)
   };
@@ -41,11 +40,16 @@ class App extends Component {
     });
   }
 
-  updatePostIt = (id, body) => {
-    // axios.post(`/api/post-its/${id}`, body).then(res => {
-    //   this.setState({ data: res.data });
-    // });
-    console.log('Updated post-it!');
+  updatePostIt = (body) => {
+    axios.post(`/api/post-its/${this.state.editId}`, body).then(res => {
+      this.setState({ data: res.data });
+    });
+    this.setState({
+      editId: '',
+      editTitle: '',
+      editDescription: '',
+      editCategory: ''
+    });
     this.hideModal();
   }
 
@@ -55,28 +59,45 @@ class App extends Component {
     });
   }
 
-
   clear = () => {
     this.getPostIts();
   }
 
-  showModal = () => {
-    this.setState({ show: true });
-    console.log('Show modal!');
+  showModal = (id, title, description, category) => {
+    this.setState({
+      show: true, 
+      editId: id,
+      editTitle: title,
+      editDescription: description,
+      editCategory: category
+    });
   }
 
   hideModal = () => {
-    this.setState({ show: false });
+    this.setState({
+      show: false,
+      editId: '',
+      editTitle: '',
+      editDescription: '',
+      editCategory: ''
+    });
   }
 
   render() {
+    const { addPostIt, filterPostIts, clear, deletePostIt, showModal, updatePostIt, hideModal } = this;
+    const { data, show, editTitle, editDescription, editCategory } = this.state;
+
     return (
       <div className="app">
-        <Header addPostItFn={this.addPostIt} filterPostItsFn={this.filterPostIts} clearFn={this.clear} />
-        <NewPostIt addPostItFn={this.addPostIt} />
-        <PostItList data={this.state.data} deletePostItFn={this.deletePostIt} showModalFn={this.showModal} />
-        {this.state.show &&
-          <Modal updatePostItFn={this.updatePostIt} hideModalFn={this.hideModal} />
+        <Header addPostItFn={addPostIt} filterPostItsFn={filterPostIts} clearFn={clear} />
+        <NewPostIt addPostItFn={addPostIt} />
+        {data.length > 0 ? 
+          <PostItList data={data} deletePostItFn={deletePostIt} showModalFn={showModal} />
+          :
+          <h2 className='empty-message'>Hmmm...looks empty. Try adding a new post-it above.</h2>
+        }
+        {show &&
+          <EditPostItModal updatePostItFn={updatePostIt} hideModalFn={hideModal} title={editTitle} description={editDescription} category={editCategory} />
         }
       </div>
     );
