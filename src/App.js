@@ -31,8 +31,16 @@ class App extends Component {
   }
 
   filterPostIts = (input) => {
-    const filteredPostIts = this.state.data.filter(element => element.title.toLowerCase().includes(input));
-    this.setState({ data: filteredPostIts });
+    if(!input) {
+      alert('Please enter a search value.');
+    } else {
+      const filteredPostIts = this.state.data.filter(element => element.title.toLowerCase().includes(input));
+      if (filteredPostIts.length > 0) {
+        this.setState({ data: filteredPostIts });
+      } else {
+        alert('No results found.');
+      }
+    }
   };
 
   addPostIt = (input) => {
