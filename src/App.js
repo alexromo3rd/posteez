@@ -66,15 +66,19 @@ class App extends Component {
     return (
       <div className="app">
         <Header addPostItFn={this.addPostIt} filterPostItsFn={this.filterPostIts} clearFn={this.clear} />
-        <NewPostIt addPostItFn={this.addPostIt} />
-        {this.state.data.length > 0 ?
-          <PostItList data={this.state.data} deletePostItFn={this.deletePostIt} />
-           :
-          <h2 className=''>Hmm...looks empty. Try creating a new Post-it above!</h2>
-        }
-        {this.state.show &&
+        
+        {this.state.show ? (
           <Modal showModalFn={this.showModal} />
-        }        
+          ) : (
+          <>
+            <NewPostIt addPostItFn={this.addPostIt} />
+            {this.state.data.length > 0 ?
+              <PostItList data={this.state.data} deletePostItFn={this.deletePostIt} />
+            :
+              <h2 className='empty-message'>Hmm...looks empty. Try creating a new Post-it above!</h2>
+            }
+          </>
+        )}        
       </div>
     );
   };

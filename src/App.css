@@ -14,3 +14,8 @@
   flex-direction: column;
   background-color: #98b3b1;
 }
+
+.empty-message {
+  margin-top: 20px;
+  text-align: center;
+}
