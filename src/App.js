@@ -45,6 +45,8 @@ class App extends Component {
     // axios.post(`/api/post-its/${id}`, body).then(res => {
     //   this.setState({ data: res.data });
     // });
+    console.log('Updated post-it!');
+    this.hideModal();
   }
 
   deletePostIt = (id) => {
@@ -60,25 +62,22 @@ class App extends Component {
 
   showModal = () => {
     this.setState({ show: true });
+    console.log('Show modal!');
+  }
+
+  hideModal = () => {
+    this.setState({ show: false });
   }
 
   render() {
     return (
       <div className="app">
         <Header addPostItFn={this.addPostIt} filterPostItsFn={this.filterPostIts} clearFn={this.clear} />
-        
-        {this.state.show ? (
-          <Modal showModalFn={this.showModal} />
-          ) : (
-          <>
-            <NewPostIt addPostItFn={this.addPostIt} />
-            {this.state.data.length > 0 ?
-              <PostItList data={this.state.data} deletePostItFn={this.deletePostIt} />
-            :
-              <h2 className='empty-message'>Hmm...looks empty. Try creating a new Post-it above!</h2>
-            }
-          </>
-        )}        
+        <NewPostIt addPostItFn={this.addPostIt} />
+        <PostItList data={this.state.data} deletePostItFn={this.deletePostIt} showModalFn={this.showModal} />
+        {this.state.show &&
+          <Modal updatePostItFn={this.updatePostIt} hideModalFn={this.hideModal} />
+        }
       </div>
     );
   };

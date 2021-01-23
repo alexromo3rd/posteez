@@ -3,11 +3,11 @@ import PostIt from './PostIt';
 import './PostItList.css';
 
 const PostItList = (props) => {
-  const { data, deletePostItFn } = props;
+  const { data, deletePostItFn, showModalFn } = props;
   const postIts = data.map(postIt => {
     const { id, title, description, category } = postIt;
     return(
-      <PostIt key={id} id={id} title={title} description={description} category={category} deletePostItFn={deletePostItFn} />
+      <PostIt key={id} id={id} title={title} description={description} category={category} deletePostItFn={deletePostItFn} showModalFn={showModalFn} />
     )
   });
 
