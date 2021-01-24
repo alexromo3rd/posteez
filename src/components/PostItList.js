@@ -5,9 +5,9 @@ import './PostItList.css';
 const PostItList = (props) => {
   const { data, deletePostItFn, showModalFn } = props;
   const postIts = data.map(postIt => {
-    const { id, title, description, category } = postIt;
+    const { id, title, description, category, color } = postIt;
     return(
-      <PostIt key={id} id={id} title={title} description={description} category={category} deletePostItFn={deletePostItFn} showModalFn={showModalFn} />
+      <PostIt key={id} id={id} title={title} description={description} category={category} color={color} deletePostItFn={deletePostItFn} showModalFn={showModalFn} />
     )
   });
 

@@ -31,15 +31,11 @@ class App extends Component {
   }
 
   filterPostIts = (input) => {
-    if(!input) {
-      alert('Please enter a search value.');
+    const filteredPostIts = this.state.data.filter(element => element.title.toLowerCase().includes(input));
+    if (filteredPostIts.length > 0) {
+      this.setState({ data: filteredPostIts });
     } else {
-      const filteredPostIts = this.state.data.filter(element => element.title.toLowerCase().includes(input));
-      if (filteredPostIts.length > 0) {
-        this.setState({ data: filteredPostIts });
-      } else {
-        alert('No results found.');
-      }
+      alert('No results found.');
     }
   };
 

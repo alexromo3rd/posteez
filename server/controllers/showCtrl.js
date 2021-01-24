@@ -6,16 +6,17 @@ module.exports = {
     res.status(200).send(data);
   },
   createPostIt: function(req, res) {
-    const { title, description, category } = req.body;
+    const { title, description, category, color } = req.body;
     const postIt = {
       id: id,
       title,
       description,
-      category
+      category,
+      color
     };
 
     id++;
-    data.push(postIt);
+    data.unshift(postIt);
     res.status(200).send(data);
   },
   updatePostIt: function(req, res) {
@@ -31,7 +32,8 @@ module.exports = {
       id: data[index].id,
       title: title || data[index].title,
       description: description || data[index].description,
-      category: category || data[index].category
+      category: category || data[index].category,
+      color: data[index].color
     };
 
     data[index] = updatedPostIt;

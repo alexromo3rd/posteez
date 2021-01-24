@@ -7,3 +7,16 @@
 .input {
   margin: 0px 10px;
 }
+
+.category-selection {
+  margin-right: 10px;
+}
+
+.dropdown {
+  border-radius: 10px;
+  min-width: 50px;
+}
+
+select:focus {
+  outline: none;
+}

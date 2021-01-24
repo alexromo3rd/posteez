@@ -3,9 +3,9 @@ import Button from './Button';
 import './PostIt.css';
 
 const PostIt = (props) => {
-  const { id, title, description, category, deletePostItFn, showModalFn } = props;
+  const { id, title, description, category, color, deletePostItFn, showModalFn } = props;
   return (
-    <div className='post-it'>
+    <div className='post-it' style={{ backgroundColor: `${color}`}}>
       <div className='title-container'>
         <h3 className='title'>{title}</h3>
         <div>
