@@ -41,11 +41,6 @@ class NewPostIt extends Component {
     }
   }
 
-  // onClick = () => {
-  //   this.setColor();
-  //   this.submit();
-  // }
-
   render() {
     const { title, description, category } = this.state;
     return (
@@ -55,7 +50,7 @@ class NewPostIt extends Component {
         <input className="input" name="description" type="text" placeholder="description" value={description} onChange={e => this.handleChange(e)} required />
         <input className="input" name="category" type="text" placeholder="category" value={category} onChange={e => this.handleChange(e)} required />
 
-        <Button handleClick={this.onSubmit} label="Add" />
+        <Button handleClick={() => this.onSubmit()} label="Add" />
       </form>
     );
   };
