@@ -15,8 +15,11 @@ class NewPostIt extends Component {
   }
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-    this.setColor();
+    if(e.target.name === 'category') {
+      this.setState({ [e.target.name]: e.target.value }, this.setColor());
+    } else {
+      this.setState({ [e.target.name]: e.target.value });
+    }
   }
 
   setColor = () => {
@@ -25,7 +28,7 @@ class NewPostIt extends Component {
     this.setState({ color: colors[randomNum] })
   }
 
-  submit = () => {
+  onSubmit = () => {
     const { title, description, category, color } = this.state;
     if (title && description && category && color) {
       this.props.addPostItFn(this.state);
@@ -38,10 +41,10 @@ class NewPostIt extends Component {
     }
   }
 
-  onClick = () => {
-    this.setColor();
-    this.submit();
-  }
+  // onClick = () => {
+  //   this.setColor();
+  //   this.submit();
+  // }
 
   render() {
     const { title, description, category } = this.state;
@@ -52,7 +55,7 @@ class NewPostIt extends Component {
         <input className="input" name="description" type="text" placeholder="description" value={description} onChange={e => this.handleChange(e)} required />
         <input className="input" name="category" type="text" placeholder="category" value={category} onChange={e => this.handleChange(e)} required />
 
-        <Button handleClick={() => this.onClick()} label="Add" />
+        <Button handleClick={this.onSubmit} label="Add" />
       </form>
     );
   };
