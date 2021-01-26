@@ -26,9 +26,9 @@ class SearchBar extends Component {
       <div className='searchbar'>
         <form>
           <input className="search" placeholder="Filter by title..." type="text" value={this.state.value} onChange={(e) => this.handleChange(e)} required />
-          <Button handleClick={this.filter} label={<i className="fas fa-filter"></i>} type="primary" />
+          <Button handleClick={this.filter} label={<i className="fas fa-filter"></i>} styleName="primary" />
         </form>
-        <Button handleClick={this.props.clearFn} label={<i className="fas fa-arrow-left"></i>} type="secondary" />
+        <Button handleClick={this.props.clearFn} label={<i className="fas fa-arrow-left"></i>} styleName="secondary" />
       </div>
     );
   };

@@ -35,7 +35,7 @@ class App extends Component {
     if (filteredPostIts.length > 0) {
       this.setState({ data: filteredPostIts });
     } else {
-      alert('No results found.');
+      this.setState({ data: [] });
     }
   };
 
@@ -99,7 +99,7 @@ class App extends Component {
         {data.length > 0 ? 
           <PostItList data={data} deletePostItFn={deletePostIt} showModalFn={showModal} />
           :
-          <h2 className='empty-message'>Hmmm...looks empty. Try adding a new post-it above.</h2>
+          <h2 className='empty-message'>Hmmm...looks empty.</h2>
         }
         {show &&
           <EditPostItModal updatePostItFn={updatePostIt} hideModalFn={hideModal} title={editTitle} description={editDescription} category={editCategory} />

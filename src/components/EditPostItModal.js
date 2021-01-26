@@ -50,8 +50,8 @@ class EditPostItModal extends Component {
             <textarea name='category' type="text" value={category} onChange={e => handleChange(e)} />
           </div>
           <div className='modal-buttons'>
-            <Button handleClick={() => hideModalFn()} label='Cancel' type='secondary' />
-            <Button handleClick={onSubmit} label='Update' type="primary" />
+            <Button handleClick={() => hideModalFn()} label='Cancel' styleName='secondary' />
+            <Button handleClick={onSubmit} label='Update' styleName="primary" />
           </div>
         </section>
       </div>
