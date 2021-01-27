@@ -5,6 +5,7 @@
   margin: 0px 5px;
   padding: 0px 10px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .button:focus {
@@ -20,10 +21,14 @@
   background-color: #000000;
 }
 
-.button.no-margin {
+.button.post-it-button {
   margin: 0;
 }
 
 .button.delete {
-  background-color: #c75b4b;
+  background-color: #ff726f;
+}
+
+.modal-button {
+  width: 25%;
 }

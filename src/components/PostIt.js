@@ -9,8 +9,14 @@ const PostIt = (props) => {
       <div className='title-container'>
         <h3 className='title'>{title}</h3>
         <div>
-          <Button handleClick={() => showModalFn(id, title, description, category)} label={<i className="fas fa-edit"></i>} styleName="no-margin" />
-          <Button handleClick={() => deletePostItFn(id)} label={<i className="fas fa-trash"></i>} styleName="no-margin delete" />
+          <div class="tooltip">
+            <span class="tooltiptext top">Edit</span>
+            <Button handleClick={() => showModalFn(id, title, description, category)} label={<i className="fas fa-edit"></i>} styleName="post-it-button" />
+          </div>
+          <div class="tooltip">
+            <span class="tooltiptext top">Delete</span>
+            <Button handleClick={() => deletePostItFn(id)} label={<i className="fas fa-trash"></i>} styleName="post-it-button delete" />
+          </div>
         </div>
       </div>
       <p className='description'>{description}</p>

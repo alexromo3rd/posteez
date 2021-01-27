@@ -3,42 +3,42 @@
     "id": 1,
     "title": "This is just a test sticky to make sure my endpoints work!",
     "description": "This is just a test sticky to make sure my endpoints work!",
-    "category": "work",
+    "category": "Work",
     "color": "#b284be"
   },
   {
     "id": 2,
     "title": "Second sticky",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in gravida elit. Quisque vitae tellus vitae dui bibendum finibus vitae ullamcorper mauris. Aliquam erat volutpat. Nam blandit rhoncus egestas. Pellentesque egestas varius erat, at molestie dui. Suspendisse laoreet neque a enim scelerisque malesuada. Maecenas viverra leo sed lorem hendrerit, non pellentesque nisl semper. Vivamus malesuada porttitor orci ut rhoncus. Fusce a nibh tristique, accumsan ante sed, interdum erat. Ut eros quam, tempus quis ante eu, gravida suscipit augue. Phasellus tincidunt egestas pharetra. Pellentesque tincidunt mollis urna, vel vulputate mauris tincidunt sed. Donec efficitur non tellus id tincidunt. Pellentesque vestibulum quis erat ut viverra. Nunc lectus ex, bibendum eu varius et, tincidunt id elit. Duis tincidunt, turpis commodo ullamcorper porta, sem orci lobortis ex, ac finibus urna orci a purus.",
-    "category": "school",
+    "category": "School",
     "color": "#818181"
   },
   {
     "id": 3,
     "title": "Third sticky",
     "description": "Integer posuere, nisl eget blandit sollicitudin, odio nulla aliquam nulla, nec cursus nulla dolor euismod dui. Vestibulum venenatis laoreet faucibus. Aliquam sagittis pulvinar massa, id dignissim lectus euismod eget. Vestibulum in nisl at metus porta vehicula id vel lacus. Aenean ac dignissim ante. Nulla bibendum lectus sit amet mauris dictum rhoncus. Vivamus massa magna, pretium ut lorem vel, imperdiet volutpat lacus. Nam ornare congue turpis, quis euismod lacus mattis nec. In faucibus, augue nec luctus posuere, nibh magna bibendum nisl, sit amet varius turpis neque in libero.",
-    "category": "work",
+    "category": "Family",
     "color": "#7afcff"
   },
   {
     "id": 4,
     "title": "Fourth sticky",
     "description": "Pellentesque euismod leo eget rhoncus porttitor. Sed eleifend nisl eu egestas maximus. In dictum quam vitae velit condimentum, quis hendrerit massa semper. Proin non venenatis sapien, id accumsan lorem. Pellentesque a ultricies purus, gravida dictum dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque id bibendum ante. Donec a fermentum libero. Nulla eleifend cursus lacus, quis elementum nulla. Ut pretium magna et sapien imperdiet lacinia. Nulla feugiat tristique pulvinar.",
-    "category": "work",
+    "category": "Shopping",
     "color": "#c75e3a"
   },
   {
     "id": 5,
     "title": "Fifth sticky",
     "description": "Quisque sit amet nisl arcu. Aenean in purus pretium, finibus orci in, placerat est. Sed placerat ultrices placerat. Ut magna sapien, convallis ut facilisis non, fermentum eget neque. Fusce eu sodales lorem. Aliquam erat volutpat. Nullam tempus ac dui non pulvinar. Ut pharetra erat at dui tempor faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at ultricies metus. Phasellus nec fringilla neque, quis rhoncus augue. Nulla posuere arcu non vulputate vulputate. Phasellus vitae sagittis nisl. Fusce sagittis consequat magna in facilisis. Curabitur in fermentum ipsum. In blandit, lorem eu ullamcorper maximus, lectus lorem ultrices tellus, vel vehicula nisl metus at turpis.",
-    "category": "work",
+    "category": "Todo",
     "color": "#ff7eb9"
   },
   {
     "id": 6,
     "title": "Sixth sticky",
     "description": "Cras convallis ante augue, at vehicula libero sodales eget. Donec sit amet ultrices tellus. Fusce ullamcorper scelerisque massa quis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet libero congue, vestibulum ex eget, vestibulum lorem. Curabitur non sem velit. Sed vel metus non risus eleifend pellentesque. Aenean cursus lacus urna, id scelerisque augue maximus non. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce maximus aliquet est, in molestie justo blandit nec. Maecenas libero ipsum, rutrum nec eros ultricies, vehicula vulputate risus. Morbi risus diam, ultricies vel arcu ac, ultrices luctus ante. Praesent dignissim interdum cursus. Praesent neque elit, semper nec dignissim quis, posuere eget massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In feugiat est eu augue vestibulum rutrum.",
-    "category": "work",
+    "category": "Other",
     "color": "#FFFF88"
   }
 ]
