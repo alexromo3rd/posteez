@@ -31,12 +31,14 @@ class App extends Component {
   }
 
   filterPostIts = (input) => {
-    const filteredPostIts = this.state.data.filter(element => element.title.toLowerCase().includes(input));
-    if (filteredPostIts.length > 0) {
-      this.setState({ data: filteredPostIts });
-    } else {
-      this.setState({ data: [] });
-    }
+    axios.get('/api/post-its').then(response => {
+      const filteredPostIts = response.data.filter(element => element.title.toLowerCase().includes(input));
+      if (filteredPostIts.length > 0) {
+        this.setState({ data: filteredPostIts });
+      } else {
+        this.setState({ data: [] });
+      }
+    })
   };
 
   addPostIt = (input) => {
